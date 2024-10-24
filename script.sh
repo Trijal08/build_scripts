@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # repo init manifest
-repo init -u https://github.com/StatiXOS/android_manifest.git -b vic --git-lfs --depth=1
+repo init -u https://github.com/Trijal08/statix_manifest.git -b vic --git-lfs --depth=1
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
