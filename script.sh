@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # repo init manifest
-repo init -u https://github.com/TenX-OS/manifest.git -b fourteen --git-lfs --depth=1
+repo init -u https://github.com/Trijal08/tenx-manifest.git -b fourteen --git-lfs --depth=1
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
