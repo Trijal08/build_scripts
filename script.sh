@@ -25,6 +25,7 @@ echo "= Sync success ="
 echo "================"
 
 # Auto-sign build
+rm -rf vendor/lineage-priv/keys
 curl -sSf https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh | bash
 
 # Export
