@@ -49,13 +49,9 @@ echo "================="
 echo "= Envsetup Done ="
 echo "================="
 
-# Lunch
+# Lunch and build the ROM
 mistify husky
-mistify shiba
-make installclean -j$(nproc --all)
-echo "===================="
-echo "= Lunch succeeded! ="
-echo "===================="
-
-# Build ROM
 mist b
+mistify shiba
+mist b
+make installclean -j$(nproc --all)
