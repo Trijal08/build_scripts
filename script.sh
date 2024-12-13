@@ -6,19 +6,19 @@ rm -rf .repo/local_manifests/
 # Initialize git lfs
 git lfs install
 
-# repo init manifest
-repo init -u https://github.com/StatiXOS/android_manifest.git -b vic --git-lfs --depth=1
+# Initialize the manifest
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/mistifest.git -b 15 -g default,-mips,-darwin,-notdefault
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
-# Local manifests
-git clone https://github.com/Trijal08/local_manifests -b StatiXOS-15-shusky --depth=1 .repo/local_manifests
-echo "============================"
-echo "Local manifest clone success"
-echo "============================"
+# Clone local manifests
+git clone https://github.com/Trijal08/local_manifests -b Mist_OS-15-k6.1-shusky --depth=1 .repo/local_manifests
+echo "================================="
+echo "= Local manifests clone success ="
+echo "================================="
 
-# Sync
+# Sync repositories (now let that sync in)
 /opt/crave/resync.sh || curl -s https://raw.githubusercontent.com/Trijal08/build_scripts/refs/heads/sync_script/resync.sh | bash
 echo "================"
 echo "= Sync success ="
@@ -30,24 +30,28 @@ wget https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto
 chmod a+x create-signed-env.sh
 ./create-signed-env.sh
 
-# Export
-export BUILD_USERNAME="GamerBoy1234294 • Stati'XElectric"
+# Export some info about us
+export BUILD_USERNAME="GamerBoy1234294 • Misty Fresh"
 export BUILD_HOSTNAME="crave"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export PIXELAGE_BUILD="shusky"
-echo "======= Export Done ======"
+echo "==============="
+echo "= Export Done ="
+echo "==============="
 
 # Set up build environment
 source build/envsetup.sh
-echo "====== Envsetup Done ======="
+croot
+echo "================="
+echo "= Envsetup Done ="
+echo "================="
 
 # Lunch
-breakfast statix_husky-ap3a-userdebug
-breakfast statix_shiba-ap3a-userdebug
+mistify husky
+mistify shiba
 make installclean -j$(nproc --all)
-echo "============="
+echo "===================="
+echo "= Lunch succeeded! ="
+echo "===================="
 
 # Build ROM
-croot
-brunch statix_husky-ap3a-userdebug
-brunch statix_shiba-ap3a-userdebug
+mist b
