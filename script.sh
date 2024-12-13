@@ -24,6 +24,10 @@ echo "================"
 echo "= Sync success ="
 echo "================"
 
+# Kernel directory setup
+mkdir device/google/shusky-kernels/5.15
+ln -sf ../6.1/trunk-12394889 device/google/shusky-kernels/5.15/24Q3-12357444
+
 # Auto-sign build
 rm -rf vendor/lineage-priv/keys
 wget https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh
