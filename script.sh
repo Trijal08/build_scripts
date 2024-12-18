@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone https://github.com/Trijal08/local_manifests -b Mist_OS-15-k6.1-shusky --depth=1 .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests -b Mist_OS-15-shusky .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
