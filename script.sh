@@ -7,27 +7,24 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/mistifest.git -b 15 -g default,-mips,-darwin,-notdefault
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/mistifest.git -b 15
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests -b Mist_OS-15-shusky .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests -b Mist_OS-15-WIP-shusky .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
 
 # Sync repositories (now let that sync in)
-/opt/crave/resync.sh || curl -s https://raw.githubusercontent.com/Trijal08/build_scripts/refs/heads/sync_script/resync.sh | bash
+/opt/crave/resync.sh || curl -sSf https://raw.githubusercontent.com/Trijal08/build_scripts/refs/heads/sync_script/resync.sh | bash
 echo "================"
 echo "= Sync success ="
 echo "================"
 
 # Directory setup
-mkdir device/google/shusky-kernels/5.15
-ln -sf ../6.1/trunk-12394889 device/google/shusky-kernels/5.15/24Q3-12357444
-rm -rf vendor/mist/overlays/SettingsHuskyOverlay
 cat > vendor/gms/common/Android.bp << EOF
 // Automatically generated file. DO NOT MODIFY
 //
@@ -1017,7 +1014,11 @@ echo "================="
 
 # Lunch and build the ROM
 make installclean -j$(nproc --all)
-mistify husky
-mist b
-mistify shiba
-mist b
+mistify husky || exit 1
+mist b || exit 1
+mistify husky || exit 1
+mist fb || exit 1
+mistify shiba || exit 1
+mist b || exit 1
+mistify shiba || exit 1
+mist fb || exit 1
