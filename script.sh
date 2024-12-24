@@ -25,7 +25,7 @@ echo "= Sync success ="
 echo "================"
 
 # Directory setup
-
+rm -rf vendor/mist/overlays/SettingsHuskyOverlay
 cat > vendor/gms/common/Android.bp << EOF
 // Automatically generated file. DO NOT MODIFY
 //
