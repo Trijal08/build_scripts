@@ -26,6 +26,7 @@ echo "================"
 
 # Directory setup
 rm -rf vendor/mist/overlays/SettingsHuskyOverlay
+rm -rf vendor/addons/prebuilt/product/priv-app/BCR
 cat > vendor/gms/common/Android.bp << EOF
 // Automatically generated file. DO NOT MODIFY
 //
@@ -993,10 +994,9 @@ android_app_import {
 EOF
 
 # Auto-sign build
-rm -rf vendor/lineage-priv/keys
-wget https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh
-chmod a+x create-signed-env.sh
-./create-signed-env.sh
+if [ ! -d vendor/lineage-priv ]; then
+   curl -sSf https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh | bash
+fi
 
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294 • Misty Fresh"
@@ -1015,11 +1015,9 @@ echo "================="
 
 # Lunch and build the ROM
 make installclean -j$(nproc --all)
-mistify husky || exit 1
-mist b || exit 1
-mistify husky || exit 1
-mist fb || exit 1
-mistify shiba || exit 1
-mist b || exit 1
-mistify shiba || exit 1
-mist fb || exit 1
+mistify husky
+mist b
+mist fb
+mistify shiba
+mist b
+mist fb
