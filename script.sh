@@ -1014,10 +1014,11 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Lunch and build the ROM
-make installclean -j$(nproc --all)
 mistify husky
+make installclean -j$(nproc --all)
 mist b
 mist fb
 mistify shiba
+make installclean -j$(nproc --all)
 mist b
 mist fb
