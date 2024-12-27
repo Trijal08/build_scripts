@@ -30,7 +30,7 @@ if [ ! -d vendor/lineage-priv ]; then
 fi
 
 # Export some info about us
-export BUILD_USERNAME="GamerBoy1234294 • Misty Fresh"
+export BUILD_USERNAME="Matthew Witherell • Flaring with Joy"
 export BUILD_HOSTNAME="crave"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 echo "==============="
