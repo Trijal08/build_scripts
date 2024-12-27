@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/clown_manifest.git -b patch-1
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/clown_manifest.git -b vic
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
@@ -30,7 +30,7 @@ if [ ! -d vendor/lineage-priv ]; then
 fi
 
 # Export some info about us
-export BUILD_USERNAME="Matthew Witherell • Clover Luckiness"
+export BUILD_USERNAME="Matthew Witherell • Funny Clown"
 export BUILD_HOSTNAME="crave"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 echo "==============="
