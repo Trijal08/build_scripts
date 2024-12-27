@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/The-Clover-Project/manifest.git -b 15-qpr1
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/ClownUI-vic/android_manifest.git -b vic
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Clover_Project-15.0-shusky .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b ClownUI-15.1-shusky .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
