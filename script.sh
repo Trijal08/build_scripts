@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/ClownUI-vic/android_manifest.git -b vic
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/clown_manifest.git -b patch-1
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
