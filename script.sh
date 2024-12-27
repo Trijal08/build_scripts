@@ -19,7 +19,7 @@ echo "= Local manifests clone success ="
 echo "================================="
 
 # Sync repositories (now let that sync in)
-/opt/crave/resync.sh || repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) || curl -sSf https://raw.githubusercontent.com/Trijal08/build_scripts/refs/heads/sync_script/resync.sh | bash
+/opt/crave/resync.sh || curl -sSf https://raw.githubusercontent.com/Trijal08/build_scripts/refs/heads/sync_script/resync.sh | bash
 echo "================"
 echo "= Sync success ="
 echo "================"
