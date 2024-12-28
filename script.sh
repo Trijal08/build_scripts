@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/TheXPerienceProject/Manifest.git -b xpe-19.0
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/xperience_manifest.git -b xpe-19.0
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
