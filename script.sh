@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/crdroidandroid/android.git -b 15.0
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Flare/manifest.git -b 15
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b crDroid-15.1-guacamoleb .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Flare-15.1-guacamoleb .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
