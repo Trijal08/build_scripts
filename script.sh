@@ -13,22 +13,21 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests-blossom.git -b Mist_OS-15 .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-15.1-guacamoleb .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
 
 # Sync repositories (now let that sync in)
-/opt/crave/resync.sh || curl -sSf https://raw.githubusercontent.com/Trijal08/build_scripts/refs/heads/sync_script/resync.sh | bash
+/opt/crave/resync.sh || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 echo "================"
 echo "= Sync success ="
 echo "================"
 
 # Auto-sign build
-rm -rf vendor/lineage-priv/keys
-wget https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh
-chmod a+x create-signed-env.sh
-./create-signed-env.sh
+if [ ! -d vendor/lineage-priv ]; then
+   curl -sSf https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh | bash
+fi
 
 # Export some info about us
 export BUILD_USERNAME="Jayed Khan • Misty Fresh"
@@ -47,5 +46,5 @@ echo "================="
 
 # Lunch and build the ROM
 make installclean -j$(nproc --all)
-mistify blossom
+mistify guacamoleb
 mist b
