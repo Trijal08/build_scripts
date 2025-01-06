@@ -46,5 +46,5 @@ echo "================="
 
 # Lunch and build the ROM
 make installclean -j$(nproc --all)
-mistify guacamoleb
-mist b
+lunch lineage_guacamoleb-ap3a-user
+m bacon
