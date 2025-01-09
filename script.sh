@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Flare/manifest.git -b 15
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/SomethingOS/android_manifest.git -b vauxite
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
@@ -19,7 +19,7 @@ echo "= Local manifests clone success ="
 echo "================================="
 
 # Sync repositories (now let that sync in)
-/opt/crave/resync.sh || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+/opt/crave/resync.sh || repo sync -c --current-branch --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 echo "================"
 echo "= Sync success ="
 echo "================"
