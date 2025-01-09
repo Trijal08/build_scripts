@@ -46,5 +46,4 @@ echo "================="
 
 # Lunch and build the ROM
 make installclean -j$(nproc --all)
-lunch lineage_guacamoleb-ap3a-user
-m bacon
+./rom-build.sh guacamoleb -z -s vendor/lineage-priv/keys/
