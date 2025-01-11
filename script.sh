@@ -45,11 +45,7 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Lunch and build the ROM
-mistify husky
-make installclean -j$(nproc --all)
-mist b
-mist fb
-mistify shiba
-make installclean -j$(nproc --all)
-mist b
-mist fb
+lunch infinity_husky-userdebug
+mka bacon -j$(nproc --all)
+lunch infinity_shiba-userdebug
+mka bacon -j$(nproc --all)
