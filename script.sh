@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b SomethingOS-15.0-guacamoleb .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-15.1-guacamoleb .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -46,4 +46,5 @@ echo "================="
 
 # Lunch and build the ROM
 make installclean -j$(nproc --all)
-./rom-build.sh guacamoleb -z -s vendor/lineage-priv/keys/
+mistify guacamoleb user
+mist b
