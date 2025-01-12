@@ -24,6 +24,12 @@ echo "================"
 echo "= Sync success ="
 echo "================"
 
+# Directory setup
+cd kernel/oneplus/sm8150
+git submodule init
+git submodule update
+cd ../../..
+
 # Auto-sign build
 if [ ! -d vendor/lineage-priv ]; then
    curl -sSf https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh | bash
