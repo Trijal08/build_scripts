@@ -45,9 +45,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Lunch and build the ROM
-breakfast husky
-make installclean -j$(nproc --all)
-breakfast shiba
-make installclean -j$(nproc --all)
-brunch husky
-brunch shiba
+#breakfast husky
+#make installclean -j$(nproc --all)
+#breakfast shiba
+#make installclean -j$(nproc --all)
+#brunch husky
+#brunch shiba
