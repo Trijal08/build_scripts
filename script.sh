@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-15.1-shusky .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-15.1-Spacewar .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -49,15 +49,10 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify husky user
-make installclean -j$(nproc --all)
-mistify shiba user
+mistify Spacewar user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify husky user
-mist b
-mist fb
-mistify shiba user
+mistify Spacewar user
 mist b
 mist fb
