@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Remove existing local_manifests
 rm -rf .repo/local_manifests/
