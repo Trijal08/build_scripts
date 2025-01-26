@@ -49,9 +49,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify bonito user
+mistify bonito eng
 make installclean -j$(nproc --all)
-mistify bonito user
+mistify bonito eng
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
