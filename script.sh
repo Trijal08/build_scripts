@@ -55,9 +55,9 @@ mistify bonito user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify sargo user
+mistify sargo eng
 mist b
 mist fb
-mistify bonito user
+mistify bonito eng
 mist b
 mist fb
