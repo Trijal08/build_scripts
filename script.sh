@@ -26,7 +26,7 @@ echo "================"
 
 # Directory setup
 rm -rf vendor/addons/prebuilt/product/priv-app/BCR
-cd kernel/google/msm-4.9; git submodule init; git submodule update; cd ../../..
+cd kernel/google/b4s4; git submodule init; git submodule update; cd ../../..
 
 # Auto-sign build
 if [ ! -d vendor/lineage-priv ]; then
