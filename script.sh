@@ -49,11 +49,11 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-breakfast sargo user
+breakfast sargo userdebug
 make installclean -j$(nproc --all)
-breakfast bonito user
+breakfast bonito userdebug
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-brunch sargo user
-brunch bonito user
+brunch sargo userdebug
+brunch bonito userdebug
