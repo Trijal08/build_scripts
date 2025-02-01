@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/mistifest.git -b 15
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/yaap/manifest.git -b fifteen
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-15.1-shusky .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b YAAP-15.1-shusky .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -49,15 +49,13 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify husky user
+lunch lineage_husky-user
 make installclean -j$(nproc --all)
-mistify shiba user
+lunch lineage_shiba-user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify husky user
-mist b
-mist fb
-mistify shiba user
-mist b
-mist fb
+lunch lineage_husky-user
+m yaap -j$(nproc)
+lunch lineage_shiba-user
+m yaap -j$(nproc)
