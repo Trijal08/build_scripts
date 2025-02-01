@@ -25,7 +25,6 @@ echo "= Sync success ="
 echo "================"
 
 # Directory setup
-rm -rf vendor/mist/overlays/SettingsHuskyOverlay
 rm -rf vendor/addons/prebuilt/product/priv-app/BCR
 
 # Auto-sign build
