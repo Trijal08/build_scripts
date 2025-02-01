@@ -25,8 +25,7 @@ echo "= Sync success ="
 echo "================"
 
 # Directory setup
-rm -rf vendor/mist/overlays/SettingsHuskyOverlay
-rm -rf vendor/addons/prebuilt/product/priv-app/BCR
+cd kernel/oneplus/sm8150; git submodule init; git submodule update; cd ../../..
 
 # Auto-sign build
 if [ ! -d vendor/lineage-priv ]; then
