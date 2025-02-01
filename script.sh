@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Matrixx-15.1-shusky .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-15.1-guacamoleb .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -49,11 +49,8 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-breakfast husky user
-make installclean -j$(nproc --all)
-breakfast shiba user
+breakfast guacamoleb user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-brunch husky user
-brunch shiba user
+brunch guacamoleb user
