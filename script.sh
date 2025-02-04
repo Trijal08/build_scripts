@@ -27,11 +27,7 @@ echo "================"
 # Directory setup
 rm -rf vendor/mist/overlays/SettingsHuskyOverlay
 rm -rf vendor/addons/prebuilt/product/priv-app/BCR
-
-# Auto-sign build
-if [ ! -d vendor/lineage-priv ]; then
-   curl -sSf https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh | bash
-fi
+rm -rf vendor/lineage-priv
 
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294"
