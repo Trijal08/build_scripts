@@ -49,15 +49,15 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify husky user
+mistify husky eng
 make installclean -j$(nproc --all)
-mistify shiba user
+mistify shiba eng
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify husky user
+mistify husky eng
 mist b
 mist fb
-mistify shiba user
+mistify shiba eng
 mist b
 mist fb
