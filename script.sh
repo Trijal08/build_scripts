@@ -50,10 +50,13 @@ make installclean -j$(nproc --all)
 mistify shiba eng
 make installclean -j$(nproc --all)
 
+# Generate private signing keys
+gk -f
+
 # Lunch and build the ROM
 mistify husky eng
-mist b
-mist fb
+mist sb
+mist sfb
 mistify shiba eng
-mist b
-mist fb
+mist sb
+mist sfb
