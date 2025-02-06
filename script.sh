@@ -28,9 +28,9 @@ echo "================"
 rm -rf vendor/addons/prebuilt/product/priv-app/BCR
 cd kernel/google/b4s4; git submodule init; git submodule update; cd ../../..
 
-# Auto-sign build
+# Clone private signing keys
 if [ ! -d vendor/lineage-priv ]; then
-   curl -sSf https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh | bash
+   git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
 fi
 
 # Export some info about us
@@ -49,15 +49,15 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify bonito eng
+mistify sargo user
 make installclean -j$(nproc --all)
-mistify bonito eng
+mistify bonito user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify sargo eng
-mist b
-mist fb
-mistify bonito eng
-mist b
-mist fb
+mistify sargo user
+mist sb
+mist sfb
+mistify bonito user
+mist sb
+mist sfb
