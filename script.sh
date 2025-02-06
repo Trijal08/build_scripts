@@ -29,7 +29,7 @@ rm -rf vendor/addons/prebuilt/product/priv-app/BCR
 cd kernel/google/b4s4; git submodule init; git submodule update; cd ../../..
 
 # Clone private signing keys
-if [ ! -d vendor/lineage-priv ]; then
+if [ ! -d vendor/lineage-priv/keys ]; then
    git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
 fi
 
