@@ -45,18 +45,15 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify husky eng
+mistify husky user
 make installclean -j$(nproc --all)
-mistify shiba eng
+mistify shiba user
 make installclean -j$(nproc --all)
-
-# Generate private signing keys
-gk -f
 
 # Lunch and build the ROM
-mistify husky eng
+mistify husky user
 mist sb
 mist sfb
-mistify shiba eng
+mistify shiba user
 mist sb
 mist sfb
