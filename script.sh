@@ -48,10 +48,8 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify waffle user
+breakfast waffle user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify waffle user
-mist sb
-mist fbs
+brunch waffle user
