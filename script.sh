@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/ProjectMatrixx/android.git -b 15.0
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/OrionOS-Project/manifest -b vic
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-15.1-waffle .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b OrionOS-15.1-waffle .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -49,8 +49,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-breakfast waffle user
+lunch lineage_waffle-ap4a-user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-brunch waffle user
+lunch lineage_waffle-ap4a-user
+make orion -j$(nproc --all)
