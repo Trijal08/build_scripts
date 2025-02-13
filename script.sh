@@ -24,9 +24,6 @@ echo "================"
 echo "= Sync success ="
 echo "================"
 
-# Directory setup
-rm -rf vendor/bcr
-
 # Clone private signing keys
 if [ ! -d vendor/lineage-priv/keys ]; then
    git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
