@@ -54,4 +54,3 @@ make installclean -j$(nproc --all)
 # Lunch and build the ROM
 mistify waffle user
 mist sb
-mist fbs
