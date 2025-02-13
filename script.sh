@@ -49,9 +49,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-lunch lineage_waffle-ap4a-user
+lunch orion_waffle-ap4a-user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-lunch lineage_waffle-ap4a-user
+lunch orion_waffle-ap4a-user
 make orion -j$(nproc --all)
