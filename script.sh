@@ -56,7 +56,5 @@ make installclean -j$(nproc --all)
 # Lunch and build the ROM
 mistify husky user
 mist sb
-#mist fbs
 mistify shiba user
 mist sb
-#mist fbs
