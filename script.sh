@@ -25,8 +25,7 @@ echo "= Sync success ="
 echo "================"
 
 # Directory setup
-ln -sf ../common/os_pickup_qssi.bp hardware/qcom-caf/sm8650/Android.bp
-ln -sf ../common/os_pickup.mk hardware/qcom-caf/sm8650/Android.mk
+rm -rf vendor/addons/bcr
 
 # Clone private signing keys
 if [ ! -d vendor/lineage-priv/keys ]; then
