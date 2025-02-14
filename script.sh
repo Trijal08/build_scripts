@@ -19,7 +19,7 @@ echo "= Local manifests clone success ="
 echo "================================="
 
 # Sync repositories (now let that sync in)
-/opt/crave/resync.sh || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j66
+/opt/crave/resync.sh || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 echo "================"
 echo "= Sync success ="
 echo "================"
@@ -57,7 +57,5 @@ make installclean -j$(nproc --all)
 # Lunch and build the ROM
 mistify sargo user
 mist sb
-mist fbs
 mistify bonito user
 mist sb
-mist fbs
