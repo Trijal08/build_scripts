@@ -45,13 +45,13 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify husky user
+lunch orion_husky-ap4a-userdebug
 make installclean -j$(nproc --all)
-mistify shiba user
+lunch orion_shiba-ap4a-userdebug
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify husky user
-mist sb
-mistify shiba user
-mist sb
+lunch orion_husky-ap4a-userdebug
+make orion -j$(nproc --all)
+lunch orion_shiba-ap4a-userdebug
+make orion -j$(nproc --all)
