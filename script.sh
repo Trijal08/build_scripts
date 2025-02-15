@@ -45,9 +45,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify waffle user
+riseup waffle user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify waffle user
-mist sb
+riseup waffle user
+rise sb
