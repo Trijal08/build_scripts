@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b 15
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/ProjectInfinity-X/manifest.git -b 15
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
@@ -45,9 +45,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify waffle user
+lunch infinity_waffle-user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify waffle user
-mist sb
+lunch infinity_waffle-user
+mka bacon -j$(nproc --all)
