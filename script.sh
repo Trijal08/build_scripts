@@ -27,11 +27,6 @@ echo "================"
 # Directory setup
 rm -rf vendor/addons/prebuilt/product/priv-app/BCR
 
-# Clone private signing keys
-if [ ! -d vendor/lineage-priv/keys ]; then
-   git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
-fi
-
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294"
 export BUILD_HOSTNAME="ServerHive"
@@ -52,6 +47,9 @@ mistify husky user
 make installclean -j$(nproc --all)
 mistify shiba user
 make installclean -j$(nproc --all)
+
+# Generate private signing keys
+gk -f
 
 # Lunch and build the ROM
 mistify husky user
