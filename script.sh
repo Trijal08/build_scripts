@@ -29,7 +29,7 @@ rm -rf vendor/addons/prebuilt/product/priv-app/BCR
 
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294"
-export BUILD_HOSTNAME="ServerHive"
+export BUILD_HOSTNAME="crave.io"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 echo "==============="
 echo "= Export Done ="
@@ -43,16 +43,16 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify husky user
+mistify husky
 make installclean -j$(nproc --all)
-mistify shiba user
+mistify shiba
 make installclean -j$(nproc --all)
 
 # Generate private signing keys
 gk -f
 
 # Lunch and build the ROM
-mistify husky user
+mistify husky
 mist sb
-mistify shiba user
+mistify shiba
 mist sb
