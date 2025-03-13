@@ -45,9 +45,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-lunch droidx_waffle-bp1a-user
+lunch droidx_waffle-ap4a-user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-lunch droidx_waffle-bp1a-user
+lunch droidx_waffle-ap4a-user
 m bacon -j$(nproc --all)
