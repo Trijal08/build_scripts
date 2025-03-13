@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/DroidX-UI/manifest.git -b 15_v2
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/DroidX-UI/manifest.git -b 15
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
