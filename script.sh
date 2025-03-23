@@ -30,10 +30,8 @@ git submodule init; git submodule update
 cd ../../..
 
 # Cherry-picking
-rm -rf vendor/lineage/
-git clone https://github.com/Project-Mist-OS/vendor_lineage.git -b 15 vendor/lineage/
 cd vendor/lineage/
-git fetch https://github.com/LineageOS/android_vendor_lineage.git refs/changes/56/417156/3 && git cherry-pick FETCH_HEAD || exit 1
+git fetch https://github.com/LineageOS/android_vendor_lineage.git refs/changes/56/417156/3 && git cherry-pick -X theirs FETCH_HEAD || exit 1
 cd ../../
 
 # Clone private signing keys
