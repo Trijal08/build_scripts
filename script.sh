@@ -29,6 +29,11 @@ cd kernel/oneplus/sm8650
 git submodule init; git submodule update
 cd ../../..
 
+# Cherry-picking
+cd vendor/lineage/
+git fetch https://github.com/LineageOS/android_vendor_lineage.git refs/changes/56/417156/3 && git cherry-pick FETCH_HEAD || exit 1
+cd ../../
+
 # Clone private signing keys
 if [ ! -d vendor/lineage-priv/keys ]; then
    git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
