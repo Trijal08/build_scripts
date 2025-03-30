@@ -29,13 +29,16 @@ cd kernel/oneplus/sm8650
 git submodule init; git submodule update
 cd ../../..
 
-# Cherry-picking
+# Commits
 cd vendor/lineage/
 git fetch https://github.com/LineageOS/android_vendor_lineage.git refs/changes/56/417156/3 && git cherry-pick -X theirs FETCH_HEAD || exit 1
 cd ../../
 #cd hardware/qcom-caf/sm8650/display/
 #git fetch https://github.com/OnePlus-12-Development/android_hardware_qcom_display.git 1e1fecc0044c8990cb1076d0a87adc8207f2acd1; git cherry-pick FETCH_HEAD || exit 1
 #cd ../../../../
+cd hardware/qcom-caf/wlan/
+git revert 715598c4ae72b83dd0094eff2d374c602a4d6fc5
+cd ../../../
 
 # Clone private signing keys
 if [ ! -d vendor/lineage-priv/keys ]; then
