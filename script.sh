@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b HorizonDroid-15.2-shusky .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b HorizonDroid-15.2-waffle .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -45,13 +45,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-lunch horizon_husky-bp1a-userdebug
-make installclean -j$(nproc --all)
-lunch horizon_shiba-bp1a-userdebug
+lunch horizon_waffle-bp1a-user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-lunch horizon_husky-bp1a-userdebug
-make horizon -j$(nproc --all)
-lunch horizon_shiba-bp1a-userdebug
+lunch horizon_waffle-bp1a-user
 make horizon -j$(nproc --all)
