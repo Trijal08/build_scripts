@@ -30,7 +30,7 @@ git submodule init; git submodule update
 cd ../../..
 
 # Commits
-cd vendor/horizon/
+cd vendor/lineage/
 git fetch https://github.com/LineageOS/android_vendor_lineage.git refs/changes/56/417156/3 && git cherry-pick -X theirs FETCH_HEAD || exit 1
 cd ../../
 #cd hardware/qcom-caf/sm8650/display/
@@ -42,10 +42,10 @@ cd ../../
 #git revert 715598c4ae72b83dd0094eff2d374c602a4d6fc5
 #cd ../../../
 
-# Clone private signing keys
-if [ ! -d vendor/lineage-priv/keys ]; then
-   git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
-fi
+## Clone private signing keys
+#if [ ! -d vendor/lineage-priv/keys ]; then
+#   git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
+#fi
 
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294"
@@ -63,9 +63,8 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-lunch horizon_waffle-bp1a-user
+breakfast waffle user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-lunch horizon_waffle-bp1a-user
-make horizon -j$(nproc --all)
+brunch waffle user
