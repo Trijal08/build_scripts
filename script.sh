@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b 15
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/ProjectMatrixx/android.git -b 15.0
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-15.2-waffle .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Infinity_X-15.2-waffle .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -63,9 +63,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify waffle user
+lunch infinity_waffle-user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify waffle user
-mist sb
+lunch infinity_waffle-user
+mka bacon -j$(nproc --all)
