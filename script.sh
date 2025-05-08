@@ -30,7 +30,7 @@ git submodule init; git submodule update
 cd ../../..
 
 # Commits
-cd vendor/lineage/
+cd vendor/infinity/
 git fetch https://github.com/LineageOS/android_vendor_lineage.git refs/changes/56/417156/3 && git cherry-pick -X theirs FETCH_HEAD || exit 1
 cd ../../
 #cd hardware/qcom-caf/sm8650/display/
