@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/ProjectMatrixx/android.git -b 15.0
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Evolution-X/manifest.git -b bka
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Matrixx-15.2-waffle .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Evo_X-16-waffle .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -63,8 +63,8 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-breakfast waffle user
+lunch lineage_waffle-bp2a-user
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-brunch waffle user
+m evolution -j$(nproc --all)
