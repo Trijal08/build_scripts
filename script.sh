@@ -25,7 +25,7 @@ echo "= Sync success ="
 echo "================"
 
 # Kernel setup
-cd kernel/realme/sm8650
+cd kernel/oneplus/sm8650
 git submodule init; git submodule update
 cd ../../..
 
