@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.0-spartan .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.0-waffle .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -25,18 +25,12 @@ echo "= Sync success ="
 echo "================"
 
 # Kernel setup
-cd kernel/realme/sm8250
+cd kernel/realme/sm8650
 git submodule init; git submodule update
 cd ../../..
 
-# Clone private signing keys
-if [ ! -d vendor/lineage-priv/keys ]; then
-   git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
-fi
-
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294"
-export BUILD_HOSTNAME="ServerHive"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 echo "==============="
 echo "= Export Done ="
@@ -50,9 +44,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify RMX3371 userdebug
+mistify waffle userdebug
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify RMX3371 user
+mistify waffle userdebug
 mist b
