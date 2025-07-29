@@ -50,9 +50,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify RMX3371 userdebug
+breakfast RMX3371 userdebug
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify RMX3371 user
-mist b
+breakfast RMX3371 userdebug
+make lunaris -j$(nproc --all)
