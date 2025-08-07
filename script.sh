@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b 16
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/CherishOS/android_manifest.git -b sixteen
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.0-waffle .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b CherishOS-16.0-waffle .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -44,9 +44,8 @@ echo "= Envsetup Done ="
 echo "================="
 
 # Delete any old builds
-mistify waffle userdebug
+breakfast waffle userdebug
 make installclean -j$(nproc --all)
 
 # Lunch and build the ROM
-mistify waffle userdebug
-mist b
+brunch waffle userdebug
