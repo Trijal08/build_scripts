@@ -57,11 +57,11 @@ make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
 # Pixel 9 Pro XL
-breakfast komodo userdebug
-make lunaris -j$(nproc --all)
+mistify komodo userdebug
+mist b
 # Pixel 9 Pro
-breakfast caiman userdebug
-make lunaris -j$(nproc --all)
+mistify caiman userdebug
+mist b
 # Pixel 9
-breakfast tokay userdebug
-make lunaris -j$(nproc --all)
+mistify tokay userdebug
+mist b
