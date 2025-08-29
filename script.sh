@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b LunarisOS-16.0-spartan .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b LunarisOS-16.0-caimito .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -23,11 +23,6 @@ echo "================================="
 echo "================"
 echo "= Sync success ="
 echo "================"
-
-# Kernel setup
-cd kernel/realme/sm8250
-git submodule init; git submodule update
-cd ../../..
 
 # Clone private signing keys
 if [ ! -d vendor/lineage-priv/keys ]; then
@@ -49,10 +44,24 @@ echo "================="
 echo "= Envsetup Done ="
 echo "================="
 
-# Delete any old builds
-breakfast spartan userdebug
+## Delete any old builds
+# Pixel 9 Pro XL
+breakfast komodo userdebug
+make installclean -j$(nproc --all)
+# Pixel 9 Pro
+breakfast caiman userdebug
+make installclean -j$(nproc --all)
+# Pixel 9
+breakfast tokay userdebug
 make installclean -j$(nproc --all)
 
-# Lunch and build the ROM
-breakfast spartan userdebug
+## Lunch and build the ROM
+# Pixel 9 Pro XL
+breakfast komodo userdebug
+make lunaris -j$(nproc --all)
+# Pixel 9 Pro
+breakfast caiman userdebug
+make lunaris -j$(nproc --all)
+# Pixel 9
+breakfast tokay userdebug
 make lunaris -j$(nproc --all)
