@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/RisingOS-Revived/android.git -b sixteen-aosp
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/RisingOS-Revived/android.git -b sixteen-los
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
