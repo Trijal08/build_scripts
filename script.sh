@@ -7,19 +7,19 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b 16
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/RisingOS-Revived/android.git -b sixteen
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.0-caimito .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b RisingOS-R-16.0-caimito .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
 
 # Sync repositories (now let that sync in)
-/opt/crave/resync.sh || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j24
+/opt/crave/resync.sh || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j48
 echo "================"
 echo "= Sync success ="
 echo "================"
@@ -46,22 +46,22 @@ echo "================="
 
 ## Delete any old builds
 # Pixel 9 Pro XL
-breakfast komodo userdebug
+riseup komodo userdebug
 make installclean -j$(nproc --all)
 # Pixel 9 Pro
-breakfast caiman userdebug
+riseup caiman userdebug
 make installclean -j$(nproc --all)
 # Pixel 9
-breakfast tokay userdebug
+riseup tokay userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
 # Pixel 9 Pro XL
-mistify komodo userdebug
-mist b
+riseup komodo userdebug
+rise b
 # Pixel 9 Pro
-mistify caiman userdebug
-mist b
+riseup caiman userdebug
+rise b
 # Pixel 9
-mistify tokay userdebug
-mist b
+riseup tokay userdebug
+rise b
