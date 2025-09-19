@@ -24,6 +24,11 @@ echo "================"
 echo "= Sync success ="
 echo "================"
 
+# Update git submodules in kernel tree
+cd kernel/oneplus/sm8350
+git submodule update --init --recursive
+cd ../../..
+
 # Clone private signing keys
 if [ ! -d vendor/lineage-priv/keys ]; then
    git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
@@ -45,23 +50,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 ## Delete any old builds
-# Pixel 9 Pro XL
-breakfast komodo userdebug
-make installclean -j$(nproc --all)
-# Pixel 9 Pro
-breakfast caiman userdebug
-make installclean -j$(nproc --all)
-# Pixel 9
-breakfast tokay userdebug
+mistify lemonade userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
-# Pixel 9 Pro XL
-mistify komodo userdebug
-mist b
-# Pixel 9 Pro
-mistify caiman userdebug
-mist b
-# Pixel 9
-mistify tokay userdebug
-mist b
+mistify lemonade userdebug
+mist b -j$(nproc --all)
