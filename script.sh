@@ -25,7 +25,7 @@ echo "= Sync success ="
 echo "================"
 
 # Update git submodules in kernel tree
-cd kernel/oneplus/sm8350
+cd kernel/oneplus/sm6375
 git submodule update --init --recursive
 cd ../../..
 
