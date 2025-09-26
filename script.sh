@@ -46,13 +46,13 @@ echo "================="
 
 ## Delete any old builds
 # Pixel 9 Pro XL
-breakfast komodo userdebug
+mistify komodo userdebug
 make installclean -j$(nproc --all)
 # Pixel 9 Pro
-breakfast caiman userdebug
+mistify caiman userdebug
 make installclean -j$(nproc --all)
 # Pixel 9
-breakfast tokay userdebug
+mistify tokay userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
