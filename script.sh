@@ -58,10 +58,10 @@ make installclean -j$(nproc --all)
 ## Lunch and build the ROM
 # Pixel 9 Pro XL
 mistify komodo userdebug
-mist b
+mist b -j$(nproc --all)
 # Pixel 9 Pro
 mistify caiman userdebug
-mist b
+mist b -j$(nproc --all)
 # Pixel 9
 mistify tokay userdebug
-mist b
+mist b -j$(nproc --all)
