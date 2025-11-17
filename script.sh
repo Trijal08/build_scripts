@@ -24,11 +24,6 @@ echo "================"
 echo "= Sync success ="
 echo "================"
 
-# Clone private signing keys
-if [ ! -d vendor/lineage-priv/keys ]; then
-   git clone --depth=1 https://github.com/Trijal08/mist_vendor_lineage-priv_keys.git -b master vendor/lineage-priv/keys
-fi
-
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294"
 export BUILD_HOSTNAME="ServerHive"
