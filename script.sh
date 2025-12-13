@@ -32,6 +32,9 @@ echo "==============="
 echo "= Export Done ="
 echo "==============="
 
+# Sync kernel submodules
+cd kernel/oneplus/sm8150; git submodule update --init --recursive; cd ../../..
+
 # Set up build environment
 source build/envsetup.sh
 croot
