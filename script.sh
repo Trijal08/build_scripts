@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Matrixx-16.0-caimito .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Matrixx-16.0-guacamoleb .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -40,20 +40,8 @@ echo "= Envsetup Done ="
 echo "================="
 
 ## Delete any old builds
-# Pixel 9 Pro XL
-breakfast komodo userdebug
-make installclean -j$(nproc --all)
-# Pixel 9 Pro
-breakfast caiman userdebug
-make installclean -j$(nproc --all)
-# Pixel 9
-breakfast tokay userdebug
+breakfast guacamoleb userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
-# Pixel 9 Pro XL
-brunch komodo userdebug
-# Pixel 9 Pro
-brunch caiman userdebug
-# Pixel 9
-brunch tokay userdebug
+brunch guacamoleb userdebug
