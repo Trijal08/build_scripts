@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/ProjectMatrixx/android.git -b 16.0
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/OrionOS-Project/manifest.git -b bka
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
@@ -43,8 +43,9 @@ echo "= Envsetup Done ="
 echo "================="
 
 ## Delete any old builds
-breakfast guacamoleb userdebug
+lunch lineage_guacamoleb-bp2a-userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
-brunch guacamoleb userdebug
+lunch lineage_guacamoleb-bp2a-userdebug
+mka orion -j$(nproc --all)
