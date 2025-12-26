@@ -8,13 +8,14 @@ git lfs install
 
 # Initialize the manifest
 #repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b 4.3
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/mist_manifest.git -b 4.3
+#repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Trijal08/mist_manifest.git -b 4.3
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/LineageOS/android.git -b lineage-23.2
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.0-caimito .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b lineage-23.2-caimito .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -42,22 +43,19 @@ echo "================="
 
 ## Delete any old builds
 # Pixel 9 Pro XL
-mistify komodo userdebug
+breakfast komodo userdebug
 make installclean -j$(nproc --all)
-# Pixel 9 Pro
-mistify caiman userdebug
-make installclean -j$(nproc --all)
-# Pixel 9
-mistify tokay userdebug
-make installclean -j$(nproc --all)
+## Pixel 9 Pro
+#breakfast caiman userdebug
+#make installclean -j$(nproc --all)
+## Pixel 9
+#breakfast tokay userdebug
+#make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
 # Pixel 9 Pro XL
-mistify komodo userdebug
-mist b -j$(nproc --all)
-# Pixel 9 Pro
-mistify caiman userdebug
-mist b -j$(nproc --all)
-# Pixel 9
-mistify tokay userdebug
-mist b -j$(nproc --all)
+brunch komodo userdebug
+## Pixel 9 Pro
+#brunch caiman userdebug
+## Pixel 9
+#brunch tokay userdebug
