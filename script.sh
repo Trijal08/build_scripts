@@ -26,7 +26,6 @@ echo "================"
 
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294"
-export BUILD_HOSTNAME="ServerHive"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 echo "==============="
 echo "= Export Done ="
