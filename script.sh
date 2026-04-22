@@ -24,6 +24,11 @@ echo "================"
 echo "= Sync success ="
 echo "================"
 
+# Sync kernel submodules
+cd kernel/oneplus/sm6375
+git submodule update --init --recursive
+cd ../../..
+
 # Export some info about us
 export BUILD_USERNAME="GamerBoy1234294"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
