@@ -41,7 +41,7 @@ echo "================="
 
 ## Delete any old builds
 # Pixel 9 Pro XL
-lunch matrixx_komodo-userdebug
+lunch matrixx_komodo-bp4a-userdebug
 make installclean -j$(nproc --all)
 # Pixel 9 Pro
 lunch matrixx_caiman-userdebug
@@ -52,7 +52,7 @@ make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
 # Pixel 9 Pro XL
-lunch matrixx_komodo-userdebug
+lunch matrixx_komodo-bp4a-userdebug
 make matrixx -j$(nproc --all)
 # Pixel 9 Pro
 lunch matrixx_caiman-userdebug
