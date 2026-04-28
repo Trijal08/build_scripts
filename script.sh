@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b 16.2
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/ProjectMatrixx/android.git -b 16.2
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.2-caimito .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Matrixx-16.2-caimito .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -41,22 +41,22 @@ echo "================="
 
 ## Delete any old builds
 # Pixel 9 Pro XL
-mistify komodo userdebug
+lunch matrixx_komodo-userdebug
 make installclean -j$(nproc --all)
 # Pixel 9 Pro
-mistify caiman userdebug
+lunch matrixx_caiman-userdebug
 make installclean -j$(nproc --all)
 # Pixel 9
-mistify tokay userdebug
+lunch matrixx_tokay-userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
 # Pixel 9 Pro XL
-mistify komodo userdebug
-mist b -j$(nproc --all)
+lunch matrixx_komodo-userdebug
+make matrixx -j$(nproc --all)
 # Pixel 9 Pro
-mistify caiman userdebug
-mist b -j$(nproc --all)
+lunch matrixx_caiman-userdebug
+make matrixx -j$(nproc --all)
 # Pixel 9
-mistify tokay userdebug
-mist b -j$(nproc --all)
+lunch matrixx_tokay-userdebug
+make matrixx -j$(nproc --all)
