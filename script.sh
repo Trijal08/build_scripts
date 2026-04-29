@@ -44,10 +44,10 @@ echo "================="
 lunch matrixx_komodo-bp4a-userdebug
 make installclean -j$(nproc --all)
 # Pixel 9 Pro
-lunch matrixx_caiman-userdebug
+lunch matrixx_caiman-bp4a-userdebug
 make installclean -j$(nproc --all)
 # Pixel 9
-lunch matrixx_tokay-userdebug
+lunch matrixx_tokay-bp4a-userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
@@ -55,8 +55,8 @@ make installclean -j$(nproc --all)
 lunch matrixx_komodo-bp4a-userdebug
 make matrixx -j$(nproc --all)
 # Pixel 9 Pro
-lunch matrixx_caiman-userdebug
+lunch matrixx_caiman-bp4a-userdebug
 make matrixx -j$(nproc --all)
 # Pixel 9
-lunch matrixx_tokay-userdebug
+lunch matrixx_tokay-bp4a-userdebug
 make matrixx -j$(nproc --all)
