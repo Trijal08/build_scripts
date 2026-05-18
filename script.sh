@@ -13,7 +13,7 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.2-caimito .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.2-pantah .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
@@ -40,23 +40,17 @@ echo "= Envsetup Done ="
 echo "================="
 
 ## Delete any old builds
-# Pixel 9 Pro XL
-mistify komodo userdebug
+# Pixel 7
+mistify pantah userdebug
 make installclean -j$(nproc --all)
-# Pixel 9 Pro
-mistify caiman userdebug
-make installclean -j$(nproc --all)
-# Pixel 9
-mistify tokay userdebug
+# Pixel 7 Pro
+mistify cheetah userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
-# Pixel 9 Pro XL
-mistify komodo userdebug
+# Pixel 7
+mistify pantah userdebug
 mist b -j$(nproc --all)
-# Pixel 9 Pro
-mistify caiman userdebug
-mist b -j$(nproc --all)
-# Pixel 9
-mistify tokay userdebug
+# Pixel 7 Pro
+mistify cheetah userdebug
 mist b -j$(nproc --all)
