@@ -41,7 +41,7 @@ echo "================="
 
 ## Delete any old builds
 # Pixel 7
-mistify pantah userdebug
+mistify panther userdebug
 make installclean -j$(nproc --all)
 # Pixel 7 Pro
 mistify cheetah userdebug
@@ -49,7 +49,7 @@ make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
 # Pixel 7
-mistify pantah userdebug
+mistify panther userdebug
 mist b -j$(nproc --all)
 # Pixel 7 Pro
 mistify cheetah userdebug
