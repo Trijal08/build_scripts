@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b b7e208108eef10fe2042eeb34be753946895b646
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b 16.2
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
