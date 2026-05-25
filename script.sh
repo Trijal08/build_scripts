@@ -33,6 +33,7 @@ echo "= Export Done ="
 echo "==============="
 
 # Set up build environment
+unalias gk
 source build/envsetup.sh
 croot
 gk -s
