@@ -35,22 +35,23 @@ echo "==============="
 # Set up build environment
 source build/envsetup.sh
 croot
+gk -s
 echo "================="
 echo "= Envsetup Done ="
 echo "================="
 
 ## Delete any old builds
 # Pixel 7
-mistify panther userdebug
+axion panther userdebug full
 make installclean -j$(nproc --all)
 # Pixel 7 Pro
-mistify cheetah userdebug
+axion cheetah userdebug full
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
 # Pixel 7
-mistify panther userdebug
-mist b -j$(nproc --all)
+axion panther userdebug full
+ax -br -j$(nproc --all)
 # Pixel 7 Pro
-mistify cheetah userdebug
-mist b -j$(nproc --all)
+axion cheetah userdebug full
+ax -br -j$(nproc --all)
