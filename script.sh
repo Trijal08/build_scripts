@@ -7,13 +7,13 @@ rm -rf .repo/local_manifests/
 git lfs install
 
 # Initialize the manifest
-repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/Project-Mist-OS/manifest.git -b 16.2
+repo init --no-repo-verify --git-lfs --depth=1 -u https://github.com/AxionAOSP/android.git -b lineage-23.2
 echo "====================="
 echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.2-pantah .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b AxionOS-16.2-pantah .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
