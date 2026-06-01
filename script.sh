@@ -13,13 +13,13 @@ echo "= Repo init success ="
 echo "====================="
 
 # Clone local manifests
-git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.2-pantah .repo/local_manifests
+git clone --depth=1 https://github.com/Trijal08/local_manifests.git -b Mist_OS-16.2-lynx .repo/local_manifests
 echo "================================="
 echo "= Local manifests clone success ="
 echo "================================="
 
 # Sync repositories (now let that sync in)
-/opt/crave/resync.sh || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j24
+/opt/crave/resync.sh || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 echo "================"
 echo "= Sync success ="
 echo "================"
@@ -40,17 +40,11 @@ echo "= Envsetup Done ="
 echo "================="
 
 ## Delete any old builds
-# Pixel 7
-mistify panther userdebug
-make installclean -j$(nproc --all)
-# Pixel 7 Pro
-mistify cheetah userdebug
+# Pixel 7a
+mistify lynx userdebug
 make installclean -j$(nproc --all)
 
 ## Lunch and build the ROM
-# Pixel 7
-mistify panther userdebug
-mist b -j$(nproc --all)
-# Pixel 7 Pro
-mistify cheetah userdebug
+# Pixel 7a
+mistify lynx userdebug
 mist b -j$(nproc --all)
